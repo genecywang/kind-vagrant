@@ -48,7 +48,9 @@ Vagrant.configure("2") do |config|
     chmod a+x ./kind
     sudo mv ./kind /usr/local/bin/kind
     sudo kind create cluster --config kind-vagrant/kind.yaml
-    kind export kubeconfig
+    sudo kind export kubeconfig
+    sudo mv /root/.kube $HOME/.kube 
+    sudo chown $(id -u):$(id -g) -R $HOME/.kube
 
     # Install K9S
     curl -sS https://webi.sh/k9s | sh
