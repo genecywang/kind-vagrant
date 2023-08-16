@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
 
     # Change the source.list
     sudo apt-get update
-    sudo apt-get install -y vim git cmake build-essential tcpdump tig jq socat bash-completion
+    sudo apt-get install -y vim git cmake build-essential tcpdump tig jq socat bash-completion golang-cfssl
     sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 
     # Install Docker
