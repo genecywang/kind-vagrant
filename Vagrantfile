@@ -56,6 +56,10 @@ Vagrant.configure("2") do |config|
     curl -sS https://webi.sh/k9s | sh
     sudo cp .local/bin/k9s /usr/local/bin/k9s 
 
+    # Install Helm
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    bash get-helm-3.sh
+
     echo 'export KUBECONFIG="$HOME/.kube/config"' >> ~/.bashrc
   SHELL
 
