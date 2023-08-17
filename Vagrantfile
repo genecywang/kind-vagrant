@@ -60,6 +60,10 @@ Vagrant.configure("2") do |config|
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
     bash get-helm-3.sh
 
+    sudo sysctl -w fs.inotify.max_user_watches=2099999999
+    sudo sysctl -w fs.inotify.max_user_instances=2099999999
+    sudo sysctl -w fs.inotify.max_queued_events=2099999999
+
     echo 'export KUBECONFIG="$HOME/.kube/config"' >> ~/.bashrc
   SHELL
 
