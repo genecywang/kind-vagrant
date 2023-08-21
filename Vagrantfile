@@ -58,7 +58,7 @@ Vagrant.configure("2") do |config|
 
     # Install Helm
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-    bash get-helm-3.sh
+    bash get_helm.sh
 
     sudo sysctl -w fs.inotify.max_user_watches=2099999999
     sudo sysctl -w fs.inotify.max_user_instances=2099999999
