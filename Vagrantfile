@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     set -e -x -u
     export DEBIAN_FRONTEND=noninteractive
-    export KIND_VERSION="v0.14.0"
+    export KIND_VERSION="v0.20.0"
     export DOCKER_VERSION="5:24.0.5-1~ubuntu.22.04~jammy"
 
     # ref: https://stackoverflow.com/questions/73397110/how-to-stop-ubuntu-pop-up-daemons-using-outdated-libraries-when-using-apt-to-i
@@ -60,9 +60,9 @@ Vagrant.configure("2") do |config|
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
     bash get_helm.sh
 
-    # Install kustomize
+    # Install Kustomize
     curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-    sudo mv kustomize /usr/local/bin/ 
+    sudo mv ./kustomize /usr/local/bin/kustomize 
 
     sudo sysctl -w fs.inotify.max_user_watches=2099999999
     sudo sysctl -w fs.inotify.max_user_instances=2099999999
