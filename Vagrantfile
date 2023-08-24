@@ -76,5 +76,6 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--cpus", 2]
       v.customize ["modifyvm", :id, "--memory", 4096]
       v.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all']
+      v.customize ['modifyvm', :id, '--natpf1', 'k8s-api,tcp,127.0.0.1,44443,192.168.56.111,44443']
   end
 end
