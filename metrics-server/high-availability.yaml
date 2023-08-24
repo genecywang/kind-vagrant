@@ -140,7 +140,6 @@ spec:
             namespaces:
             - kube-system
             topologyKey: kubernetes.io/hostname
-      hostNetwork: true
       containers:
       - args:
         - --cert-dir=/tmp
