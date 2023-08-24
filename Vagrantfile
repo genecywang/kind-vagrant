@@ -62,7 +62,7 @@ Vagrant.configure("2") do |config|
 
     # Install Kustomize
     curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
-    sudo mv ./kustomize /usr/local/bin/kustomize 
+    sudo mv kustomize /usr/local/bin/kustomize 
 
     kubectl apply -R -f kind-vagrant/metrics-server
 
