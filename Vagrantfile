@@ -64,7 +64,7 @@ Vagrant.configure("2") do |config|
     curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
     sudo mv ./kustomize /usr/local/bin/kustomize 
 
-    kubectl apply -R -f metrics-server
+    kubectl apply -R -f kind-vagrant/metrics-server
 
     sudo sysctl -w fs.inotify.max_user_watches=2099999999
     sudo sysctl -w fs.inotify.max_user_instances=2099999999
